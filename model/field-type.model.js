@@ -1,5 +1,4 @@
 module.exports = (sequelize, Sequelize) => {
-    console.log('>>> field type model', sequelize, Sequelize);
     const FieldType = sequelize.define("field_type", {
         name: Sequelize.STRING,
         // createdAt: 'created_at',
@@ -7,6 +6,5 @@ module.exports = (sequelize, Sequelize) => {
     }, {
         freezeTableName: true
     });
-    console.log('>>> field type model define', FieldType);
     return FieldType;
 };

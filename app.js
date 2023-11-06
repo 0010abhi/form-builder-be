@@ -6,10 +6,9 @@ const cors = require('cors');
 const db = require("./model");
 
 var fieldTypeRouter = require('./routes/field-type.route');
+var formRouter = require('./routes/form.route');
 
 var app = express();
-
-
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -18,14 +17,14 @@ app.use(cors());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-try {
-    db.sequelize.sync();
-    console.log('Database synchronized successfully.');
-  } catch (error) {
-    console.error('Error syncing database:', error);
-  }
-
+// try {
+//     db.sequelize.sync();
+//     console.log('Database synchronized successfully.');
+// } catch (error) {
+//     console.error('Error syncing database:', error);
+// }
 
 app.use('/api/field-type', fieldTypeRouter);
+app.use('/api/form', formRouter);
 
 module.exports = app;

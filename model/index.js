@@ -1,7 +1,6 @@
 const dbConfig = require("../config/db.config");
 const Sequelize = require("sequelize");
 
-console.log('>>>db config', dbConfig);
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER,
     dbConfig.PASSWORD, {
     host: dbConfig.HOST,
@@ -32,5 +31,6 @@ db.sequelize = sequelize;
 db.fieldType = require("./field-type.model")(sequelize, Sequelize);
 db.form = require("./form.model")(sequelize, Sequelize);
 db.formMetadata = require("./form-metadata.model")(sequelize, Sequelize);
+db.user = require("./user.model")(sequelize, Sequelize);
 
 module.exports = db;

@@ -1,0 +1,1 @@
+# https://forum.freecodecamp.org/t/node-and-sequelize-problem-creating-associated-entities/413251
